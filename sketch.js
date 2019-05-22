@@ -94,6 +94,7 @@ function drawLSystem(instructions, angle, distance) {
   for (let i = 0; i < instructions.length; ++i) {
     var current = instructions.charAt(i);
     if (current == 'F' || current == 'A' || current == 'B') {
+      stroke(255);
       line(0, 0, 0, -distance);
       translate(0, -distance);
     } else if (current == '+') {
@@ -235,7 +236,7 @@ function keyTyped() {
   else if (key == 'q') {
       lengthModifier = sqrt(2);
       activeFunction = function() {
-          translate((windowWidth / 2) - windowWidth / 8, windowHeight - 400);
+          translate((windowWidth / 2) - windowWidth / 8, windowHeight - 500);
           rotate(90);
           stroke(255);
           var instructions = createLSystem(n, cCurveAxiom, cCurveRules);
@@ -260,7 +261,7 @@ function keyTyped() {
       length = windowWidth / 3;
       lengthModifier = 1.45;
       activeFunction = function() {
-        translate(windowWidth / 2, windowHeight - 200);
+        translate(windowWidth / 2, windowHeight - 300);
         stroke(255);
         var instructions = createLSystem(n, dragonCurveAxiom, dragonCurveRules);
         var angle = 90;
